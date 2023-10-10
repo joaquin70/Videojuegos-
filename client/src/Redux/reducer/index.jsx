@@ -1,4 +1,4 @@
-import genrefilter from "../Actions/genrefilter";
+//import genrefilter from "../Actions/genrefilter";
 import {
   GET_VIDEOGAMES,
   SORT_VGAMES,
@@ -110,7 +110,7 @@ export default function rootReducer(state = initialState, action) {
         };
       } else {
         let sortedArr =
-          action.payload == "asc"
+          action.payload === "asc"
             ? state.videogames.sort(function (a, b) {
                 if (a.name > b.name) {
                   return 1;

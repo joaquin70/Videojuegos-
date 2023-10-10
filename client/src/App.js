@@ -3,7 +3,7 @@ import {Route,Routes} from "react-router-dom";
 import LandingPage from "./Views/Landing/Landing";
 import HomePage from "./Views/Home/Home";
 import AddVideogame from "./Views/add/add";
-import VideogameDetails from "./Components/detail";
+import VideogameDetails from "./Components/detail/detail";
 
 
 function App() {

@@ -1,17 +1,17 @@
-import { useEffect } from "react";
+import React,  { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import card from "../../Components/Card/Card";
 import Paging from "../../Components/Paging/Paging";
 import stl from "../Home/Home.module.css";
-import genrefilter from "../../redux/Actions/genrefilter/index";
-import vgorigin from "../../redux/Actions/vgorigin/index";
-import sortvgames from "../../redux/Actions/sortvgame/index";
+import genrefilter from "../../Redux/Actions/genrefilter/index";
+import vgorigin from "../../Redux/Actions/vgorigin/index";
+import sortvgames from "../../Redux/Actions/sortvgame/index";
 import SearchBar from "../../Components/nav/navbar";
-import getGenres from "../../redux/Actions/getgenres";
-import { getVideogames } from "../../redux/Actions/getvgames";
-import deletegame from "../../redux/Actions/deletegame";
+import getGenres from "../../Redux/Actions/getgenres";
+import  getVideogames  from "../../Redux/Actions/getvgames";
+import deletegame from "../../Redux/Actions/deletegame";
 
 export default function HomePage() {
   const dispatch = useDispatch();
