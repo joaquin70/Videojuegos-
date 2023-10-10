@@ -11,7 +11,7 @@ export default function getvgamebyid(id) {
         payload: result.data,
       });
     } catch (error) {
-      console.log("Error in action GET_VGAMES_BY_ID", errpr);
+      console.log("Error in action GET_VGAMES_BY_ID", error);
     }
   };
 }

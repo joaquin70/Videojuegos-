@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import postvgame from "../../Redux/Actions/postvgame";
 import getVideogames from "../../Redux/Actions/getvgames";
-import getGenres from "../../Redux/Actions/getgenres";
+import getGenres from "../../Rdux/Actions/getgenres";
 import getplatforms from "../../Redux/Actions/getplatforms";
 
 function validate(input) {
@@ -21,7 +21,7 @@ export default function AddVideogame() {
   const history = useLocation();
 
   useEffect(() => {
-    dispatch(getgenres());
+    dispatch(getGenres());
     dispatch(getplatforms());
   }, []);
 
@@ -38,7 +38,7 @@ export default function AddVideogame() {
   const [errors, setErrors] = useState({});
   let allGenres = useSelector((state) => state.genres);
   let allplatforms = useSelector((state) => state.platforms);
-  allgenres = allgenres.filter((p) => p !== "All");
+  allGenres = allGenres.filter((p) => p !== "All");
 
   const handleOnChange = (e) => {
     setInput((prevState) => ({

@@ -24,4 +24,21 @@ export default function card({
   const handleDeleteClick = () => {
     handleDelete();
   };
+  return (
+    <div className={stl.container}>
+      <div className={stl.card}>
+        <div className={stl.closeButton}>
+          <button className={stl.delate} onClick={handleDeleteClick}>
+            x
+          </button>
+        </div>
+        <Link className={stl.link} to={"/videogame/" + id}>
+          <h4>{name}</h4>
+          <img className={stl.imag} src={image} alt="Imagen no encontrada" />
+          <p>{formattedGenres}</p>
+          <span>{rating}</span>
+        </Link>
+      </div>
+    </div>
+  );
 }
