@@ -1,4 +1,4 @@
-import { GENRES_FILTER } from ".";
+import { GENRES_FILTER } from "../../actiontypes";
 
 export default function genrefilter(payload) {
   return {
