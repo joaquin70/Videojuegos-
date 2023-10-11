@@ -4,7 +4,7 @@ import SearchBar from '../searchBar/SearchBar';
 import { NavLink, useLocation } from 'react-router-dom';
 import style from './Nav.module.css';
 import Filters from '../filters/Filters';
-import Paginado from '../paginado/Paginado';
+import Paginado from '../Paginado/Paginado';
 
 const NavBar = () => {
   
