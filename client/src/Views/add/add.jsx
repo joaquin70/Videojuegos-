@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import postvgame from "../../Redux/Actions/postvgame";
-import getVideogames from "../../Redux/Actions/getvgames";
+import getvgames from "../../Redux/Actions/getvgames";
 import getGenres from "../../Redux/Actions/getgenres";
 import getplatforms from "../../Redux/Actions/getplatforms";
 import stl from "./Add.module.css";
@@ -19,12 +19,11 @@ function validate(input) {
 
 export default function AddVideogame() {
   const dispatch = useDispatch();
-  const history = useLocation();
 
   useEffect(() => {
     dispatch(getGenres());
     dispatch(getplatforms());
-  }, []);
+  }, [dispatch]);
 
   const [input, setInput] = useState({
     name: "",
@@ -86,7 +85,7 @@ export default function AddVideogame() {
     if (!input.name) {
       return alert("Name is required");
     }
-    if (!/^\d{4}\-\d{1,2}\-\d{1,2}$/.test(input.reldate)) {
+    if (!/^\d{4}\d{1,2}\d{1,2}$/.test(input.reldate)) {
       return alert(
         "Wrong released date format. Should be YYYY-MM-DD OR YYYY-M-D"
       );
@@ -105,7 +104,7 @@ export default function AddVideogame() {
       return alert("Platform is required");
     }
     dispatch(postvgame(input));
-    dispatch(getVideogames());
+    dispatch(getvgames());
     alert(`Videogame ${input.name} has been added`);
     setInput({
       name: "",
@@ -219,7 +218,7 @@ return (
           <span>
             <Link to="/home">
               <button className={stl.bot2}>Back To Home</button>
-            </Link>{' '}
+            </Link>{" "}
           </span>
         </div>
       </form>

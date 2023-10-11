@@ -1,4 +1,4 @@
-import  getVideogames  from "../../Redux/Actions/getvgames";
+import  getvgames  from "../../Redux/Actions/getvgames";
 import sortvgames from "../../Redux/Actions/sortvgame";
 import { Link } from "react-router-dom";
 import stl from "./Landing.module.css";
@@ -9,8 +9,8 @@ export default function LandingPage() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getVideogames());
-  }, []);
+    dispatch(getvgames());
+  }, [dispatch]);
   function handleSortvideogames(e) {
     dispatch(sortvgames("asc"));
   }

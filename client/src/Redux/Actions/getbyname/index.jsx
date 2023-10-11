@@ -1,7 +1,7 @@
 import { GET_VGAMES_BY_NAME } from "../../actiontypes/index";
 import axios from "axios";
 
-export default function getVgbyName(name) {
+export default function getvgbyName(name) {
   return async function (dispatch) {
     try {
       var result = await axios.get(

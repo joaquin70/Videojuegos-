@@ -8,7 +8,7 @@ export default function VideogameDetails(props) {
   const { id } = useParams();
   useEffect(() => {
     dispatch(getvgamebyid(id));
-  }, [dispatch]);
+  }, [dispatch,id]);
   var detail = useSelector((state) => state.videodetails);
   return (
     <div className={stl.wrapper}>

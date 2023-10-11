@@ -1,7 +1,7 @@
 import React from "react";
 import  { useState } from "react";
 import { useDispatch } from "react-redux";
-import getVgbyName from "../../Redux/Actions/getbyname";
+import getvgbyName from "../../Redux/Actions/getbyname";
 import stl from "./Nav.module.css";
 
 export default function SearchBar() {
@@ -14,7 +14,7 @@ export default function SearchBar() {
   }
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch(getVgbyName(name));
+    dispatch(getvgbyName(name));
     setName("");
   }
   return (
