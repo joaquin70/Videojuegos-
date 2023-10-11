@@ -1,44 +1,19 @@
 import React from "react";
-import stl from "./Card.module.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import style from "./Card.module.css";
 
-export default function card({
-  name,
-  image,
-  genres,
-  rating,
-  handleDelete,
-  id,
-}) {
-  const genresArray = genres.split(",");
-  let formattedGenres;
-
-  if (genresArray.length > 2) {
-    formattedGenres = genresArray.slice(0, 2).join(",");
-  } else if (genresArray.length === 1) {
-    formattedGenres = genresArray[0];
-  } else {
-    formattedGenres = genresArray.join(",") + " (...)";
-  }
-
-  const handleDeleteClick = () => {
-    handleDelete();
-  };
+const Card = (props) => {
   return (
-    <div className={stl.container}>
-      <div className={stl.card}>
-        <div className={stl.closeButton}>
-          <button className={stl.delate} onClick={handleDeleteClick}>
-            x
-          </button>
-        </div>
-        <Link className={stl.link} to={"/videogame/" + id}>
-          <h4>{name}</h4>
-          <img className={stl.imag} src={image} alt="Imagen no encontrada" />
-          <p>{formattedGenres}</p>
-          <span>{rating}</span>
-        </Link>
-      </div>
+    <div className={style.cardContenedor}>
+     <img className={style.image} src={props.image} alt={`image of ${props.name}`} />
+     <h3 className={style.name}>{props.name}</h3>
+     <h6 className={style.genres}>{props.genres}</h6>
+     <NavLink to={`/detail/${props.id}`}>
+      <button className={style.btn}>About</button>
+      </NavLink>
+
     </div>
-  );
+  )
 }
+
+export default Card
