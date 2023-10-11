@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Card from '../../Components/Card/Card';
 import { getAllVGames, notReload} from '../../redux/actions';
 import style from "./home.module.css";
-import Paginado from '../../Components/Paginado/Paginado';
+//import Paginado from '../../Components/Paginado/Paginado';
 
 
 const Home = () => {

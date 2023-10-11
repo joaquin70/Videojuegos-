@@ -1,4 +1,3 @@
-
 const apiFilter =  (array) =>{
 
     const clear = array.map((el) => {

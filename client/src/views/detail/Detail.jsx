@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink, useNavigate, useParams } from 'react-router-dom';
+import { NavLink,useNavigate, useParams } from 'react-router-dom';
 import { getDetail, deleteVgame, getAllVGames, clearDetail } from '../../redux/actions';
 import style from './detail.module.css';
 

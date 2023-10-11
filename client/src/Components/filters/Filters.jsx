@@ -12,7 +12,7 @@ const Filters = () => {
 
     useEffect(() => {
         dispatch(getGenres());
-    }, []);
+    }, [dispatch]);
 
     const handleFilter =(value)=>{
       

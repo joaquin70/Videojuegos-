@@ -22,7 +22,7 @@ const server = require('./src/app.js');
 const { genresOnDB } = require('./src/controllers/genresOnDB');
 const { conn } = require('./src/db.js');
 
-// Sincronizando todos los modelos a la vez.
+//funcion para asegurar  que los generos esten sincronizados en la DB.
 conn.sync({ alter: true }).then(async() => {
   await genresOnDB()
   server.listen(3001, () => {

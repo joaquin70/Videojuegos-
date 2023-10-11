@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+//import React, { useEffect } from 'react';
 import {useDispatch, useSelector } from 'react-redux';
 import { paginado } from '../../redux/actions';
 import style from './paginado.module.css'
