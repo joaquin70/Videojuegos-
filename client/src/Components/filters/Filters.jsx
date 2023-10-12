@@ -8,6 +8,7 @@ const Filters = () => {
     const genres = useSelector((state) => state.genres);
     const filterObjs = useSelector((state)=> state.arr_of_filterObjs);
 
+
     const [genre, setGenre] = useState("")
 
     useEffect(() => {
