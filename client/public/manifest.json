@@ -1,9 +1,9 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Videogames",
+  "name": "Videogames",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "png-transparent-playstation-3-playstation-4-game-controllers-playstation-controller-game-controls-playstation-4-video-game-black.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }
