@@ -21,7 +21,7 @@ export const NOT_RELOAD = "NOT_RELOAD";
 export function getAllVGames(){
  return async function(dispatch){
     try {
-        const response = (await axios.get("http://localhost:3001/videogames")).data
+        const response = (await axios.get("/videogames")).data
         dispatch({
             type: GET_ALL_VGAMES,
             payload: response
@@ -55,7 +55,7 @@ export function paginado(value){
 export function getDetail(id){
     return async function(dispatch){
         try {
-            const response = (await axios.get("http://localhost:3001/videogames/" + id)).data
+            const response = (await axios.get("/videogames/" + id)).data
             dispatch({
                 type: GET_DETAIL,
                 payload: response
@@ -79,7 +79,7 @@ export function clearDetail(){
 export function getGenres(){
     return async function(dispatch){
         try {
-            const response = (await axios.get("http://localhost:3001/genres")).data
+            const response = (await axios.get("/genres")).data
             dispatch({
                 type: GET_GENRES,
                 payload: response
@@ -95,7 +95,7 @@ export function postVgame(payload){
     return async function(dispatch){
         try {
             const headers={'Content-Type':'application/json'}
-            const response = await axios.post("http://localhost:3001/videogames", payload, {headers})
+            const response = await axios.post("/videogames", payload, {headers})
             dispatch({
                 type: POST_VGAME,
                 payload: response.data
@@ -183,7 +183,7 @@ export function removeAllFilter(){
 
 export function searchName(name){
     return async function(dispatch){
-        const response = (await axios.get("http://localhost:3001/videogames?name=" + name)).data
+        const response = (await axios.get("/videogames?name=" + name)).data
         dispatch({
             type: SEARCH_NAME,
             payload: response
@@ -195,7 +195,7 @@ export function searchName(name){
 export function deleteVgame(id){
     return async function(dispatch){
         try {
-            const response = await axios.delete("http://localhost:3001/delete/" + id)
+            const response = await axios.delete("/delete/" + id)
             dispatch({
                 type: DELETE_VGAME,
                 payload: response.data
@@ -211,7 +211,7 @@ export function updateVgame(payload, id){
     return async function(dispatch){
         try {
             const headers={'Content-Type':'application/json'}
-            const response = await axios.patch(`http://localhost:3001/update/${id}`, payload, {headers})
+            const response = await axios.patch(`/update/${id}`, payload, {headers})
             dispatch({
                 type: UPDATE_VGAME,
                 payload: response.data

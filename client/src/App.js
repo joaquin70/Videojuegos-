@@ -6,6 +6,8 @@ import Detail from './views/detail/Detail';
 import LandingPage from './views/landingPage/LandingPage';
 import NavBar from './Components/nav/navbar';
 import Update from './Components/update/Update'
+import axios from 'axios';
+axios.defaults.baseURL='http://localhost:3001/';
 
 function App() {
   return (

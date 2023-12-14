@@ -21,11 +21,15 @@
 const server = require('./src/app.js');
 const { genresOnDB } = require('./src/controllers/genresOnDB');
 const { conn } = require('./src/db.js');
+require ('dotenv').config();
+const {PORT}=process.env;
 
 //funcion para asegurar  que los generos esten sincronizados en la DB.
 conn.sync({ alter: true }).then(async() => {
   await genresOnDB()
-  server.listen(3001, () => {
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
+  server.listen(PORT, () => {
+    console.log('%s listening at',process.env.PORT); // eslint-disable-line no-console
   });
 });
+
+
